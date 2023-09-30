@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/create-car")
-public class CreateCarServlet extends HttpServlet {
+@WebServlet("/delete-car")
+public class DeleteCarServlet extends HttpServlet {
 
     @Override
     protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,9 +23,9 @@ public class CreateCarServlet extends HttpServlet {
 
         CarDao cd = new CarDao();
 
-        cd.createCar(new Car(carName));
+        cd.deleteCar(new Car(carName));
 
-        request.getRequestDispatcher("index.html").forward(request, response);
+        request.getRequestDispatcher("delete.html").forward(request, response);
 
 
     }
